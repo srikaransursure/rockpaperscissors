@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        
+            function computerPlay(){
+
+                    var cmpChoice= ["rock","paper","scissors"]
+                    var random=Math.floor(Math.random() * 3); 
+
+                    var chc=cmpChoice[random];
+                    return chc;
+
+            }
+
+            function play(playerSel,computerSel)
+            {
+               
+                 var ply,cmp;
+
+                 ply=playerSel.toLowerCase();
+                 cmp=computerSel.toLowerCase();
+
+               
+
+                 if(ply==cmp)
+                 {
+                     return "Same.Please try again."
+                 }
+                 else{
+
+                  if(ply=="rock"&&cmp=="paper")
+                  {
+                        return "cmp";
+
+                  }
+                  else if(ply=="rock" && cmp=="scissors"){
+
+                        return "ply";
+
+                  }
+                  else if(ply=="paper"&&cmp=="scissors")
+                  {
+
+                        return "cmp";
+
+                  }
+                  else if(ply=="paper" && cmp=="rock")
+                  {
+
+
+                      return "ply";
+                  }
+
+                  else if(ply=="scissors" && cmp=="rock")
+                  {
+
+                      return "cmp";
+                  } 
+                  else if(ply=="scissors" && cmp == "paper")
+                  {
+
+                      return "ply";
+                  }     
+
+
+                 }
+
+
+
+            }
+
+
+            function game()
+            {
+                var ply,cmp,playerCnt=0,computerCnt=0;
+
+                for(var i=0;i<5;i++){
+                ply=prompt("Enter rock ,paper or scissors");
+                cmp=computerPlay();
+
+                  str=play(ply,cmp);  
+
+if(str=="ply")
+{playerCnt++;
+}
+else if(str=="cmp")
+{computerCnt++;
+}
+
+
+                  console.log("player:"+ply+"computer:"+cmp+"  result: "+"("+playerCnt+":"+computerCnt+")");
+            }
+
+if(playerCnt>computerCnt)
+alert("player wins " +playerCnt+":"+computerCnt);
+else if(computerCnt>playerCnt)
+alert("computer wins "+computerCnt+":"+playerCnt);
+else
+alert("draw");
+
+            }
+
+game();
+            /*var ply,cmp;
+
+          
+            ply=prompt("Enter rock ,paper or scissors");
+        
+            cmp=computerPlay();
+           
+            var str=play(ply,cmp);
+           
+            alert("player:"+ply+"computer:"+cmp+"  result: "+str);
+*/
+        </script>
+    </head>
+    <body>
+
+        
+    </body>
+</html>
